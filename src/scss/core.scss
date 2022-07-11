@@ -1,0 +1,245 @@
+@use "sass:math";
+@import "./settings"
+
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+
+$width_large: 70rem;
+$width_medium: calc(5rem + 80%);
+$width_small: 90%;
+
+.document {
+    @media (max-width: 639px) {
+        width: $width_small;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        width: $width_medium;
+    }
+    @media (min-width: 1280px) {
+        width: $width_large;
+    }
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+}
+
+.urbanist {
+    font-family: "Urbanist", sans-serif;
+}
+
+.expletus {
+    font-family: "Expletus Sans", sans-serif;
+}
+
+.barlow {
+    font-family: "Barlow", sans-serif
+}
+
+.h0 {
+    @media (max-width: 639px) {
+        font-size: 300%;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        font-size: 400%;
+    }
+    @media (min-width: 1280px) {
+        font-size: 500%;
+    }
+}
+
+h1, .h1 {
+    @media (max-width: 639px) {
+        font-size: 250%;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        font-size: 350%;
+    }
+    @media (min-width: 1280px) {
+        font-size: 400%;
+    }
+}
+
+h2, .h2 {
+    @media (max-width: 639px) {
+        font-size: 150%;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        font-size: 200%;
+    }
+    @media (min-width: 1280px) {
+        font-size: 300%;
+    }
+}
+
+h3, .h3 {
+    @media (max-width: 639px) {
+        font-size: 125%;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        font-size: 150%;
+    }
+    @media (min-width: 1280px) {
+        font-size: 200%;
+    }
+}
+
+p, h6, .p {
+    @media (max-width: 639px) {
+        font-size: 90%;
+    }
+    @media (min-width: 640px) and (max-width: 1279px) {
+        font-size: 100%;
+    }
+    @media (min-width: 1280px) {
+        font-size: 100%;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-grow {
+    flex-grow: 1;
+}
+
+.f-shrink {
+    flex-shrink: 1;
+}
+
+.f-shrink-0 {
+    flex-shrink: 0;
+}
+
+.f-wrap {
+    flex-wrap: wrap;
+}
+
+$justifyMap: (
+        flex-start: "s",
+        center: "c",
+        flex-end: "e",
+        space-between: "b",
+        space-around: "a",
+        Space-evenly: "v",
+);
+
+$alignMap: (
+        flex-start: "s",
+        center: "c",
+        flex-end: "e",
+        stretch: "t",
+        baseline: "l",
+);
+
+@each $justKey, $justVal in $justifyMap {
+    @each $alignKey, $alignVal in $alignMap {
+        .row-#{$justVal}#{$alignVal} {
+            @extend .row;
+            justify-content: $justKey;
+            align-items: $alignKey;
+        }
+
+        .col-#{$justVal}#{$alignVal} {
+            @extend .col;
+            justify-content: $justKey;
+            align-items: $alignKey;
+        }
+    }
+}
+
+
+.h-bar {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+// border radius 1 - 4rem, 0.25rem increment
+@for $i from 1 through 16 {
+    $border_radius: 0.25rem * $i;
+    .rounded-#{$i} {
+        border-radius: $border_radius;
+    }
+}
+
+// font sizes 50% - 400%
+@for $i from 0 through 10 {
+    $number: 50 + 10 * $i;
+    $font_size: 50% + (10% * $i);
+    .font-#{$number} {
+        font-size: $font_size;
+    }
+}
+
+@for $i from 1 through 34 {
+    $number: 150 + 25 * $i;
+    $font_size: 150% + (25% * $i);
+    .font-#{$number} {
+        font-size: $font_size;
+    }
+}
+
+.no-bold {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.bold-800 {
+    font-weight: 800;
+}
+
+.bold-900 {
+    font-weight: 900;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.justified {
+    text-align: justify;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+@for $i from 1 through 20 {
+    $num: 5 * $i;
+    $percentage: 5% * $i;
+    .w-#{$num} {
+        width: $percentage;
+    }
+
+    .h-#{$num} {
+        height: $percentage;
+    }
+}
+
+@for $i from 1 through 11 {
+    $amount: 8.3333333333333% * $i;
+    .w-#{$i}-#{12} {
+        width: $amount;
+    }
+
+    .h-#{$i}-#{12} {
+        height: $amount;
+    }
+}

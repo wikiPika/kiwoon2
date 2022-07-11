@@ -1,0 +1,195 @@
+@import "./settings";
+
+.apex-home {
+
+    p, .p {
+        color: $lightergray;
+    }
+
+    .hero-panel {
+        height: max(100vh, 50rem);
+        .document {
+
+            .text > h1 {
+                margin: 0;
+            }
+
+            .graphic {
+                position: relative;
+                z-index: 0;
+                overflow: hidden;
+
+                margin: 4rem;
+
+                background: rgb(43,43,43);
+                background: linear-gradient(0deg, rgba(25,25,25,1) 0%, rgba(0,0,0,1) 50%);
+                aspect-ratio: 1/1;
+
+                border-bottom-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+            }
+        }
+    }
+
+    .stats-panel {
+        position: relative;
+        height: max(80vh, 40rem);
+        background-color: rgb(25, 25, 25);
+
+        .document {
+            .text > h1 {
+                margin: 0;
+            }
+
+            .text > *:last-child > *:first-child {
+                margin-right: 2rem;
+            }
+
+            .discs {
+                position: relative;
+            }
+        }
+    }
+
+    .discord-outline {
+        height: max(60vh, 30rem);
+        overflow: hidden;
+
+        img {
+            margin-top: 4rem;
+            width: 90%;
+        }
+    }
+
+    .info {
+
+        position: relative;
+
+        height: max(100vh, 50rem);
+        background-color: rgb(25, 25, 25);
+        overflow: hidden;
+
+        .document {
+
+            .text {
+
+                h1, .topic,  p {
+                    margin: 1rem 0 0;
+                }
+
+                h3 {
+                    margin-left: 1rem;
+                }
+
+                .topic {
+                    background-color: rgba(255, 255, 255, 0.08);
+                    padding: 0 1rem;
+                }
+
+                .mini-logo {
+                    height: 2rem;
+                }
+            }
+
+            .img-container {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 4rem;
+                }
+            }
+        }
+    }
+
+    .offers {
+        min-height: 100vh;
+
+        .document {
+            .options {
+                margin-top: 4rem;
+            }
+        }
+    }
+}
+
+.blue-green-text-gradient {
+    background: rgb(39,214,129);
+    background: linear-gradient(135deg, rgba(39,231,129,1) 0%, rgba(92,107,234,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blue-green-gradient {
+    background: rgb(39,214,129);
+    background: linear-gradient(45deg, rgba(39,214,129,1) 0%, rgba(59,84,255,1) 100%);
+}
+
+.hero-icon {
+    position: absolute;
+
+    width: 27%;
+
+    border-radius: 12.5%;
+    box-shadow: 0 0 1.5rem rgba(86,122,255,1);
+
+    aspect-ratio: 1/1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        object-fit: contain;
+    }
+}
+
+.disc {
+    position: absolute;
+}
+
+.card {
+    margin: 1rem;
+    border: 1px solid $lightishgray;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+
+    .wave-container {
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: rgba(255, 255, 255, 0.9);
+        height: 12rem;
+        padding-bottom: 1rem;
+    }
+    ul {
+        margin-bottom: 2rem;
+
+        li {
+            margin: 2rem 1rem;
+        }
+    }
+    .bottom-pricing {
+        bottom: 0;
+        border-top: 1px solid $lightishgray;
+        background-color: rgba(255, 255, 255, 0.08);
+        height: 8rem;
+    }
+}
+
+.gradient-top {
+    position: absolute;
+    top: 0;
+    height: 10%;
+    background: rgb(25, 25, 25);
+    background: linear-gradient(0deg, rgba(25, 25, 25, 1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.gradient-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    background: rgb(25, 25, 25);
+    background: linear-gradient(180deg, rgba(25, 25, 25, 1) 0%, rgba(0,0,0,1) 100%);
+}

@@ -1,0 +1,30 @@
+@import "./settings";
+
+.rounded-button {
+    position: relative;
+
+    border: 0.5px solid $lesslightgray;
+
+    padding: 0.75rem 1.5rem;
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+    cursor: pointer;
+
+    background: black;
+
+    .content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .slide-in {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 110%;
+        z-index: 1;
+    }
+}
